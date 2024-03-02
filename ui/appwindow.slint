@@ -1,17 +1,24 @@
-import { Button, VerticalBox } from "std-widgets.slint";
+import { Button, VerticalBox, Slider } from "std-widgets.slint";
 
-export component AppWindow inherits Window {
-    in-out property<int> counter: 42;
-    callback request-increase-value();
+
+export component MainWindow inherits Window {
+    in-out property<float> hydration: 75;
+    
+    width: 326px;
+    height: 326px;
+    padding: 50px;
+    background: gray;
     VerticalBox {
         Text {
-            text: "Counter: \{root.counter}";
+            text: "Hydration: \{round(slider.value)}";
+            vertical-alignment: center;
+            font-size: 14px;
+            horizontal-alignment: center;
+
         }
-        Button {
-            text: "Increase value";
-            clicked => {
-                root.request-increase-value();
-            }
+        slider := Slider{
+            value: hydration;
+
         }
     }
 }
