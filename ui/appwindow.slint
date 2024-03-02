@@ -1,24 +1,41 @@
-import { Button, VerticalBox, Slider } from "std-widgets.slint";
+import { VerticalBox, Slider } from "std-widgets.slint";
 
 
 export component MainWindow inherits Window {
     in-out property<float> hydration: 75;
+    in-out property<float> total: 1000;
     
     width: 326px;
     height: 326px;
     padding: 50px;
     background: gray;
     VerticalBox {
-        Text {
-            text: "Hydration: \{round(slider.value)}";
-            vertical-alignment: center;
-            font-size: 14px;
-            horizontal-alignment: center;
-
+        VerticalBox {
+            Text {
+                text: "Total Weight";
+                vertical-alignment: center;
+                font-size: 14px;
+                horizontal-alignment: center;
+            }
+            TextInput {
+                text: total;
+                vertical-alignment: center;
+                font-size: 14px;
+                horizontal-alignment: center;
+            }
         }
-        slider := Slider{
-            value: hydration;
+        
+        VerticalBox {
+            Text {
+                text: "Hydration: \{round(slider.value)}";
+                vertical-alignment: center;
+                font-size: 14px;
+                horizontal-alignment: center;
 
+            }
+            slider := Slider{
+                value: hydration;
+            }
         }
     }
 }
