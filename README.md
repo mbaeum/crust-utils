@@ -1,5 +1,7 @@
 # Crust Utils
 
+[![ci](https://github.com/mbaeum/crust-utils/actions/workflows/ci.yml/badge.svg)](https://github.com/mbaeum/crust-utils/actions/workflows/ci.yml) [![release](https://github.com/mbaeum/crust-utils/actions/workflows/release.yml/badge.svg)](https://github.com/mbaeum/crust-utils/actions/workflows/release.yml)
+
 ## Develop
 
 ### Getting Started
