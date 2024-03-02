@@ -1,6 +1,6 @@
 # Crust Utils
 
-[![ci](https://github.com/mbaeum/crust-utils/actions/workflows/ci.yml/badge.svg)](https://github.com/mbaeum/crust-utils/actions/workflows/ci.yml) [![release](https://github.com/mbaeum/crust-utils/actions/workflows/release.yml/badge.svg)](https://github.com/mbaeum/crust-utils/actions/workflows/release.yml)
+[![linting](https://github.com/mbaeum/crust-utils/actions/workflows/lint.yml/badge.svg)](https://github.com/mbaeum/crust-utils/actions/workflows/lint.yml) [![tests](https://github.com/mbaeum/crust-utils/actions/workflows/test.yml/badge.svg)](https://github.com/mbaeum/crust-utils/actions/workflows/test.yml) [![release](https://github.com/mbaeum/crust-utils/actions/workflows/release.yml/badge.svg)](https://github.com/mbaeum/crust-utils/actions/workflows/release.yml)
 
 ## Develop
 

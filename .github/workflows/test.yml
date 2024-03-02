@@ -1,4 +1,4 @@
-name: ci
+name: test
 
 on: 
   pull_request:
@@ -50,40 +50,8 @@ jobs:
         with: 
           toolchain: ${{ matrix.rust }}
 
-      - name: Build dnd
+      - name: Build app
         run: cargo build --verbose --workspace
       
       - name: Run tests
         run: cargo test --verbose
-
-  rustfmt:
-    name: rustfmt
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: dtolnay/rust-toolchain@v1
-        with: 
-          toolchain: stable
-          components: rustfmt
-      - run: cargo fmt -- --check
-  
-  clippy:
-    name: clippy
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: dtolnay/rust-toolchain@v1
-        with: 
-          toolchain: stable
-          components: clippy
-      - run: cargo clippy --all-targets -- -D warnings
-  
-  build:
-    name: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: dtolnay/rust-toolchain@v1
-        with: 
-          toolchain: stable
-      - run: cargo build
