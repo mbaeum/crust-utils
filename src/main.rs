@@ -1,7 +1,51 @@
-slint::include_modules!();
+#![allow(non_snake_case)]
+use dioxus::prelude::*;
 
-fn main() -> Result<(), slint::PlatformError> {
-    let ui = MainWindow::new().unwrap();
+#[component]
+fn HydrationSliderView(cx: Scope) -> Element {
+    let hydration = use_state(cx, || 75);
 
-    ui.run()
+    cx.render(rsx!(
+        div {
+            class: "inputHeader",
+            "Hydration: {hydration}"
+        }
+        input {
+            class: "slider",
+            min: 0,
+            max: 100,
+            value: "{hydration}",
+            r#type: "range",
+            oninput: move |event| hydration.set(event.value.parse().unwrap())
+         }
+    ))
+}
+
+#[component]
+fn TotalWeightView(cx: Scope) -> Element {
+    let total = use_state(cx, || 1000);
+
+    cx.render(rsx!(
+        div {
+            class: "inputHeader",
+            "Total Weight: {total}"
+        }
+        input {
+            class: "textInput",
+            value: "change",
+            oninput: move |event| total.set(event.value.parse().unwrap())
+         }
+    ))
+}
+
+fn App(cx: Scope) -> Element {
+    render! {
+        HydrationSliderView { }
+        TotalWeightView { }
+    }
+}
+
+fn main() {
+    // launch the dioxus app in a webview
+    dioxus_desktop::launch(App);
 }

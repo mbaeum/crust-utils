@@ -3,12 +3,9 @@ name = "crust-utils"
 version = "0.1.0"
 authors = ["Moritz Baeumel <moritzbaeumnel@gmail.com>"]
 edition = "2021"
-build = "build.rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-slint = "1.4"
-
-[build-dependencies]
-slint-build = "1.4"
+dioxus = "0.4.3"
+dioxus-desktop = "0.4.3"
