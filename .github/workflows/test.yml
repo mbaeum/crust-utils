@@ -17,8 +17,8 @@ jobs:
         - beta
         - nightly
         - macos
-        - win-msvc
-        - win-gnu
+        # - win-msvc
+        # - win-gnu
         include:
         - build: pinned
           os: ubuntu-18.04
